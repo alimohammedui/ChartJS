@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <title>Chart JS Practice</title>
+
+  </head>
+  <body>
+
+  <div class="container">
+    <canvas id="mychart"></canvas>
+  </div>
+
+<script>
+
+var mychart = document.getElementById('mychart').getContext('2d');
+
+
+
+var barChart = new Chart('mychart', {
+    type: 'bar',
+
+  data: {
+    labels:['Chicago', 'Naperville', 'Schaumberg', 'Skokie', 'Arora', 'Evanston'],
+    datasets:[{
+      label: 'Population',
+      data: [
+        269876,
+        210122,
+        170987,
+        140767,
+        110678,
+        90987,
+      ],
+      backgroundColor:[
+        'red',
+        'orange',
+        'green',
+        'purple',
+        'yellow',
+        'blue',
+     ],
+     borderWidth: 2,
+     borderColor: 'black',
+     hoverBorderWidth: 3,
+     hoverBorderColor: 'red',
+    }]
+  },
+  options: {
+    title:{
+      display: true,
+      text: 'Largest Cities in Illinois',
+      fontSize: 25,
+
+    },
+    legend: {
+              display: true,
+              position: 'right',
+              labels: {
+                fontColor: '#000'
+              }
+            },
+            layout: {
+              padding:{
+                left: 50,
+                right: 0,
+                botton: 0,
+                top: 0
+              }
+            }
+  }
+})
+
+</script>
